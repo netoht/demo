@@ -6,6 +6,7 @@
  |_____/|______|_|  |_|\____/  /_/    \_\_|    |_|
 
 ${spring-boot.formatted-version}
+${application.formatted-version}
 
 # banner generator:       http://patorjk.com/software/taag/#p=display&f=Big&t=DEMO%20APP
 # more info about banner: http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-spring-application.html
