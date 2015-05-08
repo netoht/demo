@@ -5,7 +5,7 @@ more info: https://registry.hub.docker.com/u/alexeiled/docker-oracle-xe-11g/
 ###### Baixando a imagem e iniciando o serviço:
 ```
 $ docker pull alexeiled/docker-oracle-xe-11g
-$ docker run -d -p 2223:22 -p 1521:1521 -p 8080:8080 alexeiled/docker-oracle-xe-11g
+$ docker run --name oracle -d -p 2223:22 -p 1521:1521 -p 8080:8080 alexeiled/docker-oracle-xe-11g
 ```
 
 ###### Dados para conexão com o banco de dados:
@@ -33,4 +33,12 @@ password:  oracle
 ```sh
 ssh root@localhost -p 2223
 password: admin
+```
+
+###### Criando novo usuário
+```
+CREATE USER my_app identified by 123456;
+GRANT create session,create table TO my_app;
+GRANT UNLIMITED TABLESPACE TO my_app;
+SELECT * FROM dba_users WHERE username = 'MY_APP';
 ```
